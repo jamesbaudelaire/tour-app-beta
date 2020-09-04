@@ -3,7 +3,7 @@ import { Locations } from "../data";
 import "../styles/home.scss";
 import { Location } from "./components/location";
 import { TimeSlots } from "./components/time-slots";
-import Account from "@material-ui/icons/AccountCircleRounded";
+import Account from "@material-ui/icons/AccountCircle";
 import { Ads } from "./components/ads";
 
 export const Home = ({ setPage, ls }) => {

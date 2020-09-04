@@ -17,23 +17,26 @@ export const Filters = ({ setPage, ls, filters, setFilters }) => {
       {Object.keys(Interests).map((type) => (
         <div className="type" key={type}>
           {type}
-          {Interests[type].map((interest) => (
-            <button
-              key={interest}
-              className={`interest ${
-                filters.includes(interest) ? "selected" : ""
-              }`}
-              onClick={() => {
-                if (filters.includes(interest)) {
-                  setFilters(filters.filter((x) => x !== interest));
-                } else {
-                  setFilters([...filters, interest]);
-                }
-              }}
-            >
-              {InterestsIcons[interest]} {interest}
-            </button>
-          ))}
+          <div className="interests">
+            {Interests[type].map((interest) => (
+              <button
+                key={interest}
+                className={`interest ${
+                  filters.includes(interest) ? "selected" : ""
+                }`}
+                onClick={() => {
+                  if (filters.includes(interest)) {
+                    setFilters(filters.filter((x) => x !== interest));
+                  } else {
+                    setFilters([...filters, interest]);
+                  }
+                }}
+              >
+                {/* {InterestsIcons[interest]}  */}
+                {interest}
+              </button>
+            ))}
+          </div>
         </div>
       ))}
 
