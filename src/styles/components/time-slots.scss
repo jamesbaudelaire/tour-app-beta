@@ -1,0 +1,21 @@
+.time-slots{
+  border:2px solid black;
+  white-space: nowrap;
+  overflow: scroll;
+  :last-child{
+    margin-right:20px;
+  }
+}
+
+.time-slot{
+  vertical-align: top;
+  display: inline-block;
+  margin: 20px;
+  margin-right: 0;
+  border:2px solid black;
+}
+
+.location{
+  margin:20px;
+  border:2px solid black;
+}
