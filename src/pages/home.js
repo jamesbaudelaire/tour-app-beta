@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Locations } from "../data";
+import { LocationsData } from "../data";
 import "../styles/home.scss";
 import { Location } from "./components/location";
+import { Locations } from "./components/locations";
 import { TimeSlots } from "./components/time-slots";
 import Account from "@material-ui/icons/AccountCircle";
 import { Ads } from "./components/ads";
@@ -9,11 +10,12 @@ import { Ads } from "./components/ads";
 export const Home = ({ setPage, ls }) => {
   const [locations, setLocations] = useState([]);
   const [location, setLocation] = useState();
+  // const [location, setLocation] = useState(Locations[0]);
 
   useEffect(() => {
     let filters = ls.data.filters;
     let temp = [];
-    Locations.forEach((location) => {
+    LocationsData.forEach((location) => {
       location.types.forEach((type) => {
         if (filters.includes(type)) {
           temp.push(location);
@@ -27,6 +29,7 @@ export const Home = ({ setPage, ls }) => {
     <div id="home">
       <Ads />
 
+      {/* <Locations locations={locations} setLocation={setLocation} /> */}
       <TimeSlots locations={locations} setLocation={setLocation} />
 
       <Account
@@ -36,7 +39,7 @@ export const Home = ({ setPage, ls }) => {
         }}
       />
 
-      {location && <Location location={location} />}
+      {location && <Location location={location} setLocation={setLocation} />}
     </div>
   );
 };

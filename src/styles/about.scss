@@ -1,4 +1,23 @@
 #tour{
   height:200px;
   width:300px;
+  margin:20px auto;
+  display: block;
+}
+
+.slogan{
+  margin:20px;
+}
+
+.about-continue{
+  right:0;
+  position: fixed;
+  bottom:0;margin:20px;
+  color:white;
+  background: var(--theme);
+  display: flex;
+  align-items: center;
+  svg{
+    padding-left: 10px;
+  }
 }

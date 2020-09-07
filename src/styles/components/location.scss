@@ -4,4 +4,17 @@
   left: 0;
   width:100%;
   background: grey;
+  overflow: scroll;
+  height:300px;
+}
+
+.location-images{
+ height: 200px;
+ border:2px solid black;
+ overflow-x: scroll;
+ white-space: nowrap;
+img{
+height:150px;
+margin:20px;
+}
 }
