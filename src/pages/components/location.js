@@ -15,6 +15,8 @@ export const Location = ({ location, setLocation }) => {
       </span>
 
       <div id="location-details">
+        <div className="location-name">{location.name}</div>
+
         <div className="location-images">
           {[1, 2, 3].map((n) => (
             <img
@@ -24,8 +26,6 @@ export const Location = ({ location, setLocation }) => {
             />
           ))}
         </div>
-
-        <div className="location-name">{location.name}</div>
 
         <a
           className="location-phone action"
