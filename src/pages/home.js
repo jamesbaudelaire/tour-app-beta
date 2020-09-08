@@ -4,13 +4,12 @@ import "../styles/home.scss";
 import { Location } from "./components/location";
 import { Locations } from "./components/locations";
 import { TimeSlots } from "./components/time-slots";
-import Account from "@material-ui/icons/AccountCircle";
 import { Ads } from "./components/ads";
 
 export const Home = ({ setPage, ls }) => {
   const [locations, setLocations] = useState([]);
   const [location, setLocation] = useState();
-  // const [location, setLocation] = useState(Locations[0]);
+  // const [location, setLocation] = useState(LocationsData[0]);
 
   useEffect(() => {
     let filters = ls.data.filters;
@@ -32,12 +31,15 @@ export const Home = ({ setPage, ls }) => {
       {/* <Locations locations={locations} setLocation={setLocation} /> */}
       <TimeSlots locations={locations} setLocation={setLocation} />
 
-      <Account
+      <span
+        className="material-icons-round"
         id="account"
         onClick={() => {
           setPage("filters");
         }}
-      />
+      >
+        account_circle
+      </span>
 
       {location && <Location location={location} setLocation={setLocation} />}
     </div>

@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/about.scss";
 import { ReactComponent as Tour } from "../assets/tour.svg";
-import Arrow from "@material-ui/icons/ArrowForward";
 
 export const About = ({ setPage, ls }) => {
   return (
@@ -15,7 +14,7 @@ export const About = ({ setPage, ls }) => {
           ls.save({ ...ls.data, page: "filters" });
         }}
       >
-        continue <Arrow />
+        continue <span className="material-icons-round">arrow_forward</span>
       </button>
     </div>
   );

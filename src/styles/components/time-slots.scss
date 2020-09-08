@@ -1,21 +1,46 @@
 .time-slots{
-  border:2px solid black;
-  white-space: nowrap;
-  overflow: scroll;
-  :last-child{
-    margin-right:20px;
-  }
 }
 
 .time-slot{
-  vertical-align: top;
-  display: inline-block;
-  margin: 20px;
-  margin-right: 0;
-  border:2px solid black;
+margin: 20px;
+.hour{
+  margin: 10px 0;
+  font-size: 20px;
+  font-family: var(--font1);
+}
+}
+
+.locations{
+  border-radius: 20px;
+  white-space: nowrap;
+  overflow: scroll;
+  box-shadow: var(--inset);
 }
 
 .location{
-  margin:20px;
-  border:2px solid black;
+  margin: 20px;
+  display: inline-block;
+    padding: 20px;
+    position: relative;
+    height:150px;width:200px;
+    overflow: hidden;
+    border-radius: 20px;
+    background-size: cover;
+    box-shadow: var(--shadow);
+}
+
+
+.location .location-name{
+  font-family: var(--font1);
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+    overflow: hidden;
+    backdrop-filter: blur(7px); 
+    font-size: 20px; 
+  color:white;
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+  padding:10px;
+  position: absolute;
+  bottom:0;left:0;
 }

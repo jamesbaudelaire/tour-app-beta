@@ -11,8 +11,8 @@ export const Interests = {
     "viking",
     "german"
   ],
-  arts: ["theater", "symphony", "gallery", "mural", "statute", "concert"],
-  activities: [
+  art: ["theater", "symphony", "gallery", "mural", "statute", "concert"],
+  activity: [
     "biking",
     "skateboarding",
     "hiking",
@@ -65,8 +65,9 @@ export const LocationsData = [
     id: "the-darby-house",
     name: "The Darby House",
     types: ["western", "seafood"],
-    open: 17,
+    hour: 17,
     gps: "311 General Darby Street 72901",
+    site: "https://www.fortsmith.org/the-darby-house/",
     phone: "4791234567",
     about:
       "General William O. Darby – founder of the famed Darby's Rangers that fought in Italy during WWII and evolved into the modern day Army Rangers – grew up in this modest home. The home now serves as a heritage museum that contains personal military memorabilia of General Darby and other WWII memorabilia, as well as tributes to Darby and artifacts from Cisterna, Italy; Fort Smith's sister city."
@@ -75,26 +76,36 @@ export const LocationsData = [
     id: "test2",
     name: "test 2",
     types: ["biking"],
-    open: 12
+    hour: 12
   },
   {
     name: "test 3",
     types: ["black"],
-    open: 15
+    hour: 15
   },
   {
     name: "test 4",
     types: ["murals", "seafood"],
-    open: 15
+    hour: 15
   },
   {
     name: "test 5",
     types: ["western", "exhibit"],
-    open: 17
+    hour: 17
   },
   {
     name: "test 6",
     types: ["biking"],
-    open: 9
+    hour: 9
+  },
+  {
+    name: "test 7",
+    types: ["biking"],
+    hour: 17
+  },
+  {
+    name: "test 8",
+    types: ["biking"],
+    hour: 17
   }
 ];

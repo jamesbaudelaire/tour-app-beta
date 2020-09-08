@@ -2,20 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Work+Sans&display=swap');
 
 :root{
-  --shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  --shadow:0px 2px 8px -2px  rgba(0,0,0,.25);
 --font2:'Roboto', sans-serif;
 --font1: 'Work Sans', sans-serif;
 --theme:#2962ff;
 --selected:#00c853;
+--inset: inset 0px 2px 5px 0px rgb(0, 0, 0, 0.75);
+--light: rgb(240,240,240);
 }
 
 body{
+  background: var(--light);
   margin: 0;padding: 0;
   font-family:var(--font2);
   &::after {
     content: "";
     display: block;
-    height: 100px;
+    height: 320px;
   }
 }
 
@@ -26,9 +29,10 @@ button{
   border:none;
 box-shadow: var(--shadow);
 font-size: 16px;
-text-transform: uppercase;
 padding: 5px 10px;
 border-radius: 30px;
-font-family:var(--font1);
+}
 
+a{
+  text-decoration: none;
 }

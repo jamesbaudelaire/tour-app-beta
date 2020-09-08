@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 import { Interests, InterestsIcons } from "../data";
 import "../styles/filters.scss";
 
-import Arrow from "@material-ui/icons/ArrowForward";
-
 export const Filters = ({ setPage, ls, filters, setFilters }) => {
   useEffect(() => {
     setFilters(ls.data.filters);
@@ -14,13 +12,15 @@ export const Filters = ({ setPage, ls, filters, setFilters }) => {
     <div id="filters">
       <div className="filters-info">
         <div className="title">Choose your interests</div>
-        select at least three interests to get personalized location
-        recommendations...
+        <div className="info">
+          select at least three interests to get personalized location
+          recommendations...
+        </div>
       </div>
 
       {Object.keys(Interests).map((type) => (
         <div className="type" key={type}>
-          <span>{type}</span>
+          <span className="type-name">{type}</span>
           <div className="interests">
             {Interests[type].map((interest) => (
               <button
@@ -48,10 +48,11 @@ export const Filters = ({ setPage, ls, filters, setFilters }) => {
           className="filters-continue"
           onClick={() => {
             setPage("home");
+            ls.save({ ...ls.data, filters });
             ls.save({ ...ls.data, page: "home", filters });
           }}
         >
-          continue <Arrow />
+          continue <span className="material-icons-round">arrow_forward</span>
         </button>
       )}
     </div>

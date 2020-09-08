@@ -4,21 +4,30 @@
 .title{
   font-size: 30px;
   font-weight: bold;
+  font-family: var(--font1);
+}
+.info{
+opacity: .75;
+margin:10px;
 }
 }
 
 .type{
   margin:20px;
-span{
-  font-size: 24px;
-  text-transform: uppercase;
-  margin:20px 0;
+  text-transform: capitalize;
+.type-name{
+  font-family: var(--font);
+  font-size: 20px;
   display: block;
+font-weight: bold;
 }
 }
 
+
 .interest{
   margin: 10px;
+  font-family: var(--font2);
+  text-transform: capitalize;
 }
 
 .selected{
@@ -28,6 +37,7 @@ color:white;
 
 .filters-continue{
   position: fixed;
+  text-transform: uppercase;
   bottom:0;
   right: 0;
   margin:20px;
@@ -35,7 +45,7 @@ color:white;
   background: var(--theme);
   display: flex;
   align-items: center;
-  svg{
+  span{
     padding-left: 10px;
   }
 }
