@@ -15,8 +15,9 @@
   left: 0;
   width:100%;
   overflow: scroll;
-  height:400px;
   background:white;
+  z-index: 10;
+  height: 400px;
 }
 
 #location-details{
@@ -73,3 +74,14 @@ box-shadow: var(--shadow);
 }
 
 
+
+
+#location{
+  transition:.3s;
+  transform: translateY(370px);
+  opacity: 0;
+  &.loaded{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

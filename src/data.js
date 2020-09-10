@@ -1,3 +1,5 @@
+//history, food, art, entertainment, activity
+
 export const Interests = {
   history: [
     "western",
@@ -26,8 +28,8 @@ export const Interests = {
     "sports"
   ],
   entertainment: [
-    "brewery/craft beer",
-    " winery/wine bar",
+    "brewery",
+    "winery",
     "cigars",
     "jazz",
     "country",
@@ -51,61 +53,75 @@ export const Interests = {
     "coffee"
   ]
 };
+
 export const InterestsIcons = {
   western: "🤠",
-  black: "✊🏿",
-  murals: "🎨",
-  exhibit: "🗿",
-  biking: "🚴",
-  hiking: "🥾"
+  seafood: "🦞",
+  // black: "✊🏿",
+  // murals: "🎨",
+  // exhibit: "🗿",
+  biking: "🚴"
+  // hiking: "🥾"
+};
+
+export const Sponsors = {
+  stay: [
+    {
+      name: "",
+      site: ""
+    }
+  ],
+  eat: [],
+  go: []
 };
 
 export const LocationsData = [
   {
     id: "the-darby-house",
     name: "The Darby House",
-    types: ["western", "seafood"],
+    types: ["western"],
     hour: 17,
+    categories: ["history"],
+    // hour:[17,20,]
+    // location:'rivervalley',
     gps: "311 General Darby Street 72901",
     site: "https://www.fortsmith.org/the-darby-house/",
-    phone: "4791234567",
-    about:
-      "General William O. Darby – founder of the famed Darby's Rangers that fought in Italy during WWII and evolved into the modern day Army Rangers – grew up in this modest home. The home now serves as a heritage museum that contains personal military memorabilia of General Darby and other WWII memorabilia, as well as tributes to Darby and artifacts from Cisterna, Italy; Fort Smith's sister city."
+    phone: "4791234567"
   },
   {
-    id: "test2",
-    name: "test 2",
-    types: ["biking"],
-    hour: 12
+    id: "rialto",
+    name: "The Rialto Restaurant",
+    types: ["western", "seafood"],
+    hour: 15,
+    categories: ["food", "history"],
+    // hour:[17,20,]
+    // location:'rivervalley',
+    gps: "720 Garrison Ave",
+    site: "https://rialtofortsmith.com/",
+    phone: "(479) 769-2406"
   },
   {
-    name: "test 3",
-    types: ["black"],
-    hour: 15
+    id: "trolley-museum",
+    name: "Trolley Museum",
+    types: ["western"],
+    hour: 12,
+    categories: ["history"],
+    // hour:[17,20,]
+    // location:'rivervalley',
+    gps: "720 Garrison Ave",
+    site: "",
+    phone: "(479) 769-2406"
   },
   {
-    name: "test 4",
-    types: ["murals", "seafood"],
-    hour: 15
-  },
-  {
-    name: "test 5",
-    types: ["western", "exhibit"],
-    hour: 17
-  },
-  {
-    name: "test 6",
-    types: ["biking"],
-    hour: 9
-  },
-  {
-    name: "test 7",
-    types: ["biking"],
-    hour: 17
-  },
-  {
-    name: "test 8",
-    types: ["biking"],
-    hour: 17
+    id: "skate-bike-park",
+    name: "Riverfront Park",
+    types: ["skateboarding", "biking"],
+    hour: 12,
+    categories: ["activity"],
+    // hour:[17,20,]
+    // location:'rivervalley',
+    gps: "720 Garrison Ave",
+    site: "",
+    phone: "(479) 769-2406"
   }
 ];

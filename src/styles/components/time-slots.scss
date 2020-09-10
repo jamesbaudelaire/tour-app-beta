@@ -1,12 +1,12 @@
-.time-slots{
-}
 
 .time-slot{
 margin: 20px;
 .hour{
   margin: 10px 0;
-  font-size: 20px;
+  font-size: 26px;
   font-family: var(--font1);
+  font-weight: bold;
+  color:var(--theme);
 }
 }
 
@@ -35,8 +35,10 @@ margin: 20px;
   box-sizing: border-box;
   text-overflow: ellipsis;
     overflow: hidden;
-    backdrop-filter: blur(7px); 
-    font-size: 20px; 
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px);
+    background: rgba(0,0,0,.5);
+    font-size: 18px; 
   color:white;
   width: 100%;
   border-radius: 0 0 20px 20px;

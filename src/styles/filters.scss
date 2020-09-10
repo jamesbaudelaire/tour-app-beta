@@ -8,7 +8,7 @@
 }
 .info{
 opacity: .75;
-margin:10px;
+margin:0 10px;
 }
 }
 
@@ -16,10 +16,11 @@ margin:10px;
   margin:20px;
   text-transform: capitalize;
 .type-name{
-  font-family: var(--font);
-  font-size: 20px;
+  font-family: var(--font1);
+  font-size: 26px;
   display: block;
 font-weight: bold;
+color:var(--theme);
 }
 }
 

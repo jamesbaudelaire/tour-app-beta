@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
-
+import { useLoading } from "../functions/loading";
 import { Interests, InterestsIcons } from "../data";
 import "../styles/filters.scss";
 
-export const Filters = ({ setPage, ls, filters, setFilters }) => {
+export const Filters = ({ setPage, ls }) => {
+  const [filters, setFilters] = useState([]);
+  const loading = useLoading();
+
   useEffect(() => {
     setFilters(ls.data.filters);
   }, []);
 
   return (
-    <div id="filters">
+    <div id="filters" className="page" {...loading}>
       <div className="filters-info">
         <div className="title">Choose your interests</div>
         <div className="info">
@@ -47,9 +50,8 @@ export const Filters = ({ setPage, ls, filters, setFilters }) => {
         <button
           className="filters-continue"
           onClick={() => {
-            setPage("home");
-            ls.save({ ...ls.data, filters });
-            ls.save({ ...ls.data, page: "home", filters });
+            setPage("categories");
+            ls.save({ ...ls.data, page: "categories", filters });
           }}
         >
           continue <span className="material-icons-round">arrow_forward</span>

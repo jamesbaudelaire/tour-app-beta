@@ -1,44 +1,37 @@
 import React, { useState, useEffect } from "react";
-import { LocationsData } from "../data";
+// import { LocationsData } from "../data";
 import "../styles/home.scss";
 import { Location } from "./components/location";
-import { Locations } from "./components/locations";
 import { TimeSlots } from "./components/time-slots";
-import { Ads } from "./components/ads";
+import { Sponsors } from "./components/sponsors";
+import { useLoading } from "../functions/loading";
 
 export const Home = ({ setPage, ls }) => {
-  const [locations, setLocations] = useState([]);
   const [location, setLocation] = useState();
-  // const [location, setLocation] = useState(LocationsData[0]);
+  const [locations, setLocations] = useState();
+
+  const loading = useLoading();
 
   useEffect(() => {
-    let filters = ls.data.filters;
-    let temp = [];
-    LocationsData.forEach((location) => {
-      location.types.forEach((type) => {
-        if (filters.includes(type)) {
-          temp.push(location);
-        }
-      });
-    });
-    setLocations([...new Set(temp)]);
+    setLocations(ls.data.locations);
   }, []);
 
   return (
-    <div id="home">
-      <Ads />
+    <div id="home" className="page" {...loading}>
+      <Sponsors />
 
-      {/* <Locations locations={locations} setLocation={setLocation} /> */}
-      <TimeSlots locations={locations} setLocation={setLocation} />
+      {locations && (
+        <TimeSlots locations={locations} setLocation={setLocation} />
+      )}
 
       <span
         className="material-icons-round"
-        id="account"
+        id="categories-button"
         onClick={() => {
-          setPage("filters");
+          setPage("categories");
         }}
       >
-        account_circle
+        where_to_vote
       </span>
 
       {location && <Location location={location} setLocation={setLocation} />}

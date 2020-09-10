@@ -1,9 +1,13 @@
 import React from "react";
 import "../../styles/components/location.scss";
 
+import { useLoading } from "../../functions/loading";
+
 export const Location = ({ location, setLocation }) => {
+  const loading = useLoading();
+
   return (
-    <div id="location">
+    <div id="location" {...loading}>
       <span
         id="close-location"
         className="material-icons-round"
@@ -22,7 +26,7 @@ export const Location = ({ location, setLocation }) => {
             <img
               alt={location.name}
               key={n}
-              src={`https://res.cloudinary.com/baudelaire/image/upload/w_500/v1599246387/tour-app-beta/${location.id}/${n}.jpg`}
+              src={`https://res.cloudinary.com/baudelaire/image/upload/w_500/tour-app-beta/${location.id}/${n}`}
             />
           ))}
         </div>
@@ -53,7 +57,7 @@ export const Location = ({ location, setLocation }) => {
           <span className="material-icons-round">web</span>Website
         </a>
 
-        <div className="location-about">{location.about}</div>
+        <div className="location-about">About...</div>
 
         <div className="location-coupon">coupon</div>
       </div>

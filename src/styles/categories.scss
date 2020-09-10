@@ -1,0 +1,33 @@
+#categories{
+  padding-top:60px;
+  position: relative;
+}
+
+.select-location{
+position: absolute;
+top:0;right:0;
+margin:10px;
+font-size: 40px;
+}
+
+#categories .selected-location{
+color:var(--selected);
+}
+
+.category{
+  white-space: nowrap;
+  margin: 20px;
+}
+.category-name{
+  text-transform: capitalize;
+  margin:10px 0;
+  font-weight: bold;
+  color:var(--theme);
+    font-family: var(--font1);
+  font-size: 26px;
+}
+
+
+.categories-info{
+  margin:20px;
+}

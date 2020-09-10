@@ -24,7 +24,7 @@ export const TimeSlots = ({ setLocation, locations }) => {
                   className="location"
                   key={l.name}
                   style={{
-                    backgroundImage: `url(https://res.cloudinary.com/baudelaire/image/upload/w_500/v1599246387/tour-app-beta/${l.id}/1.jpg)`
+                    backgroundImage: `url(https://res.cloudinary.com/baudelaire/image/upload/w_500/tour-app-beta/${l.id}/1)`
                   }}
                   onClick={() => {
                     setLocation(l);
