@@ -10,7 +10,7 @@ import { LS } from "./functions/ls";
 
 export const App = () => {
   // const [page, setPage] = useState(LS.data.page);
-  const [page, setPage] = useState("about");
+  const [page, setPage] = useState("categories");
 
   useEffect(() => {
     window.scrollTo(0, 0);

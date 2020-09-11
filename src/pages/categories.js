@@ -36,27 +36,38 @@ let categorizeLocations = (locations) => {
 export const Categories = ({ setPage, ls }) => {
   const [location, setLocation] = useState();
   const [locations, setLocations] = useState([]);
-  const [userLocations, setUserLocations] = useState([]);
+  const [organizedLocations, setOrganizedLocations] = useState([]);
+  const [tourLocations, setTourLocations] = useState([]);
+  const [area, setArea] = useState(null);
+
+  let areas = ["downtown", "rivervalley", "greater"];
 
   const loading = useLoading();
 
   useEffect(() => {
-    if (ls.data.locations) {
-      setUserLocations(ls.data.locations);
+    if (ls.data.tourLocations) {
+      setTourLocations(ls.data.tourLocations);
     }
+    setLocations(filterLocations(ls));
   }, []);
 
   useEffect(() => {
-    let organized = categorizeLocations(filterLocations(ls));
-    setLocations(organized);
-  }, []);
+    if (!area) {
+      let organized = categorizeLocations(filterLocations(ls));
+      setOrganizedLocations(organized);
+    } else {
+      let temp = locations.filter((l) => l.area === area);
+      let organized = categorizeLocations(temp);
+      setOrganizedLocations(organized);
+    }
+  }, [area]);
 
   let selectLocation = (l) => {
-    if (userLocations.filter((location) => location.id === l.id).length === 0) {
-      setUserLocations([...userLocations, l]);
+    if (tourLocations.filter((location) => location.id === l.id).length === 0) {
+      setTourLocations([...tourLocations, l]);
     } else {
-      let temp = userLocations.filter((location) => location.id !== l.id);
-      setUserLocations(temp);
+      let temp = tourLocations.filter((location) => location.id !== l.id);
+      setTourLocations(temp);
     }
   };
 
@@ -76,15 +87,35 @@ export const Categories = ({ setPage, ls }) => {
         Select locations to create a custom itinerary...
       </div>
 
+      <div id="areas">
+        <div>Filter by an area...</div>
+        {areas.map((a) => (
+          <button
+            className={`area ${a === area ? "selected" : ""}`}
+            key={a}
+            onClick={() => {
+              setTourLocations([]);
+              if (a === area) {
+                setArea(null);
+              } else {
+                setArea(a);
+              }
+            }}
+          >
+            {a}
+          </button>
+        ))}
+      </div>
+
       <div id="categorized-locations">
-        {Object.keys(locations).map((c) => (
+        {Object.keys(organizedLocations).map((c) => (
           <div key={c} className="category">
             <div className="category-name">{c}</div>
             <div className="locations">
-              {locations[c].map((l) => (
+              {organizedLocations[c].map((l) => (
                 <div
                   className={`location ${
-                    userLocations.filter((location) => location.id === l.id)
+                    tourLocations.filter((location) => location.id === l.id)
                       .length > 0
                       ? "selected-location"
                       : ""
@@ -116,18 +147,18 @@ export const Categories = ({ setPage, ls }) => {
 
       {location && <Location location={location} setLocation={setLocation} />}
 
-      {
-        userLocations.length>0&&<button
-          className="about-continue"
+      {tourLocations.length > 0 && (
+        <button
+          className="continue-button"
           onClick={() => {
             setPage("home");
-            ls.save({ ...ls.data, page: "home", locations: userLocations });
-            console.log(userLocations);
+            ls.save({ ...ls.data, page: "home", tourLocations });
+            console.log(tourLocations);
           }}
         >
           continue <span className="material-icons-round">arrow_forward</span>
         </button>
-      }
+      )}
     </div>
   );
 };

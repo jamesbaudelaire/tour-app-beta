@@ -8,6 +8,7 @@ position: absolute;
 top:0;right:0;
 margin:10px;
 font-size: 40px;
+transition:.3s;
 }
 
 #categories .selected-location{
@@ -22,7 +23,6 @@ color:var(--selected);
   text-transform: capitalize;
   margin:10px 0;
   font-weight: bold;
-  color:var(--theme);
     font-family: var(--font1);
   font-size: 26px;
 }
@@ -30,4 +30,12 @@ color:var(--selected);
 
 .categories-info{
   margin:20px;
+}
+
+#areas{
+  margin:20px;
+  .area{
+    margin:10px;
+    text-transform: capitalize;
+  }
 }

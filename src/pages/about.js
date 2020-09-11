@@ -12,7 +12,7 @@ export const About = ({ setPage, ls }) => {
       <div className="slogan">Locations that matter to you...</div>
       <Tour id="tour" />
       <button
-        className="about-continue"
+        className="continue-button"
         onClick={() => {
           setPage("filters");
           ls.save({ ...ls.data, page: "filters" });

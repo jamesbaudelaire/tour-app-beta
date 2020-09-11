@@ -48,7 +48,7 @@ export const Filters = ({ setPage, ls }) => {
 
       {filters.length > 2 && (
         <button
-          className="filters-continue"
+          className="continue-button"
           onClick={() => {
             setPage("categories");
             ls.save({ ...ls.data, page: "categories", filters });

@@ -1,6 +1,7 @@
 let terminal = {
   page: "about",
-  filters: []
+  filters: [],
+  tourLocations: []
 };
 
 let appName = "test";

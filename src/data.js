@@ -83,7 +83,7 @@ export const LocationsData = [
     hour: 17,
     categories: ["history"],
     // hour:[17,20,]
-    // location:'rivervalley',
+    area: "rivervalley",
     gps: "311 General Darby Street 72901",
     site: "https://www.fortsmith.org/the-darby-house/",
     phone: "4791234567"
@@ -95,7 +95,7 @@ export const LocationsData = [
     hour: 15,
     categories: ["food", "history"],
     // hour:[17,20,]
-    // location:'rivervalley',
+    area: "downtown",
     gps: "720 Garrison Ave",
     site: "https://rialtofortsmith.com/",
     phone: "(479) 769-2406"
@@ -107,7 +107,7 @@ export const LocationsData = [
     hour: 12,
     categories: ["history"],
     // hour:[17,20,]
-    // location:'rivervalley',
+    area: "greater",
     gps: "720 Garrison Ave",
     site: "",
     phone: "(479) 769-2406"
@@ -119,7 +119,7 @@ export const LocationsData = [
     hour: 12,
     categories: ["activity"],
     // hour:[17,20,]
-    // location:'rivervalley',
+    area: "rivervalley",
     gps: "720 Garrison Ave",
     site: "",
     phone: "(479) 769-2406"

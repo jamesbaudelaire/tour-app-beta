@@ -13,7 +13,7 @@ export const Home = ({ setPage, ls }) => {
   const loading = useLoading();
 
   useEffect(() => {
-    setLocations(ls.data.locations);
+    setLocations(ls.data.tourLocations);
   }, []);
 
   return (
