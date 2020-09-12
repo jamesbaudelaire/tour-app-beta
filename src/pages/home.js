@@ -24,15 +24,17 @@ export const Home = ({ setPage, ls }) => {
         <TimeSlots locations={locations} setLocation={setLocation} />
       )}
 
-      <span
-        className="material-icons-round"
-        id="categories-button"
-        onClick={() => {
-          setPage("categories");
-        }}
-      >
-        where_to_vote
-      </span>
+      <div className="nav">
+        <span
+          className="material-icons-round"
+          id="categories-button"
+          onClick={() => {
+            setPage("categories");
+          }}
+        >
+          where_to_vote
+        </span>
+      </div>
 
       {location && <Location location={location} setLocation={setLocation} />}
     </div>

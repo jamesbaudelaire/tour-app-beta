@@ -51,6 +51,7 @@ export const Location = ({ location, setLocation }) => {
 
         <a
           className="location-site action"
+          target="_blank"
           href={`${location.site}`}
           rel="noopener noreferrer"
         >

@@ -11,15 +11,18 @@ export const About = ({ setPage, ls }) => {
     <div id="about" className="page" {...loading}>
       <div className="slogan">Locations that matter to you...</div>
       <Tour id="tour" />
-      <button
-        className="continue-button"
-        onClick={() => {
-          setPage("filters");
-          ls.save({ ...ls.data, page: "filters" });
-        }}
-      >
-        continue <span className="material-icons-round">arrow_forward</span>
-      </button>
+
+      <div className="nav">
+        <button
+          className="continue-button"
+          onClick={() => {
+            setPage("filters");
+            ls.save({ ...ls.data, page: "filters" });
+          }}
+        >
+          continue <span className="material-icons-round">arrow_forward</span>
+        </button>
+      </div>
     </div>
   );
 };

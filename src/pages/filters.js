@@ -47,15 +47,17 @@ export const Filters = ({ setPage, ls }) => {
       ))}
 
       {filters.length > 2 && (
-        <button
-          className="continue-button"
-          onClick={() => {
-            setPage("categories");
-            ls.save({ ...ls.data, page: "categories", filters });
-          }}
-        >
-          continue <span className="material-icons-round">arrow_forward</span>
-        </button>
+        <div className="nav">
+          <button
+            className="continue-button"
+            onClick={() => {
+              setPage("categories");
+              ls.save({ ...ls.data, page: "categories", filters });
+            }}
+          >
+            continue <span className="material-icons-round">arrow_forward</span>
+          </button>
+        </div>
       )}
     </div>
   );

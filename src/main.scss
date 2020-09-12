@@ -1,9 +1,9 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&display=swap');
 
 :root{
   --shadow: 0px 2px 6px -2px rgba(0,0,0,0.5);
-  --font1: 'Comfortaa', cursive;
+  --font2: 'Lato', sans-serif;
   --font2: 'Open Sans', sans-serif;
 --theme:#2962ff;
 --selected:#00c853;
@@ -14,6 +14,7 @@
 
 
 body{
+    touch-action: manipulation;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   background: var(--light);
   margin: 0;padding: 0;
@@ -33,6 +34,7 @@ body{
 
 
 button{
+  font-family:var(--font2);
   &:focus {outline:0;};
   transition: .3s;
   background: none;
@@ -61,19 +63,18 @@ opacity: 0;
 
 
 #categories-button,#filters-button{
-  position: absolute;top:0;right:0;
-  margin:10px;
-  font-size:50px;
-color:var(--theme);
+  margin:20px;
+  font-size:40px;
+color:white;
 }
 
 .continue-button{
-  position: fixed;
+  position: absolute;
   text-transform: uppercase;
   bottom:0;
   box-shadow: var(--shadow);
-  right: 0;left:0;
-  margin:20px auto;
+  right: 0;
+  margin:20px;
   color:white;
   background: var(--theme);
   display: flex;
@@ -84,4 +85,16 @@ color:var(--theme);
   span{
     padding-left: 10px;
   }
+}
+
+.nav{
+  border-radius: 30px 30px 0 0;
+  height:80px;
+  width: 100%;
+  backdrop-filter: blur(5px); 
+  -webkit-backdrop-filter: blur(5px);
+  background: rgba(0,0,0,.5);
+  position: fixed;
+  bottom:0;
+  z-index: 10;
 }

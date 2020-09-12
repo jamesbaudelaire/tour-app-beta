@@ -73,16 +73,6 @@ export const Categories = ({ setPage, ls }) => {
 
   return (
     <div id="categories" className="page" {...loading}>
-      <span
-        className="material-icons-round"
-        id="filters-button"
-        onClick={() => {
-          setPage("filters");
-        }}
-      >
-        add_location
-      </span>
-
       <div className="categories-info">
         Select locations to create a custom itinerary...
       </div>
@@ -147,18 +137,30 @@ export const Categories = ({ setPage, ls }) => {
 
       {location && <Location location={location} setLocation={setLocation} />}
 
-      {tourLocations.length > 0 && (
-        <button
-          className="continue-button"
+      <div className="nav">
+        <span
+          className="material-icons-round"
+          id="filters-button"
           onClick={() => {
-            setPage("home");
-            ls.save({ ...ls.data, page: "home", tourLocations });
-            console.log(tourLocations);
+            setPage("filters");
           }}
         >
-          continue <span className="material-icons-round">arrow_forward</span>
-        </button>
-      )}
+          add_location
+        </span>
+
+        {tourLocations.length > 0 && (
+          <button
+            className="continue-button"
+            onClick={() => {
+              setPage("home");
+              ls.save({ ...ls.data, page: "home", tourLocations });
+              console.log(tourLocations);
+            }}
+          >
+            continue <span className="material-icons-round">arrow_forward</span>
+          </button>
+        )}
+      </div>
     </div>
   );
 };

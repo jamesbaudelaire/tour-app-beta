@@ -64,15 +64,20 @@ export const InterestsIcons = {
   // hiking: "🥾"
 };
 
-export const Sponsors = {
+export const SponsorsData = {
   stay: [
     {
-      name: "",
-      site: ""
+      id: "comfort-inn",
+      name: "Comfort Inn & Suites",
+      site:
+        "https://www.choicehotels.com/arkansas/little-rock/comfort-inn-hotels/ar115"
+    },
+    {
+      id: "hampton-inn",
+      name: "Hilton Inn",
+      site: "https://www.hilton.com/en/hotels/fsmarhx-hampton-fort-smith/"
     }
-  ],
-  eat: [],
-  go: []
+  ]
 };
 
 export const LocationsData = [
@@ -80,7 +85,7 @@ export const LocationsData = [
     id: "the-darby-house",
     name: "The Darby House",
     types: ["western"],
-    hour: 17,
+    hour: 15,
     categories: ["history"],
     // hour:[17,20,]
     area: "rivervalley",
@@ -92,7 +97,7 @@ export const LocationsData = [
     id: "rialto",
     name: "The Rialto Restaurant",
     types: ["western", "seafood"],
-    hour: 15,
+    hour: 17,
     categories: ["food", "history"],
     // hour:[17,20,]
     area: "downtown",
