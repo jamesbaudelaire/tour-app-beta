@@ -48,6 +48,16 @@ export const Filters = ({ setPage, ls }) => {
 
       {filters.length > 2 && (
         <div className="nav">
+          <span
+            className="material-icons-round"
+            id="filters-button"
+            onClick={() => {
+              setPage("about");
+            }}
+          >
+            help
+          </span>
+
           <button
             className="continue-button"
             onClick={() => {
