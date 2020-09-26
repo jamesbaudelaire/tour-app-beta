@@ -4,20 +4,22 @@ import "../styles/home.scss";
 import { Location } from "./components/location";
 import { TimeSlots } from "./components/time-slots";
 import { Sponsors } from "./components/sponsors";
-import { useLoading } from "../functions/loading";
-
+import { motion } from "framer-motion";
 export const Home = ({ setPage, ls }) => {
   const [location, setLocation] = useState();
   const [locations, setLocations] = useState();
-
-  const loading = useLoading();
 
   useEffect(() => {
     setLocations(ls.data.tourLocations);
   }, []);
 
   return (
-    <div id="home" className="page" {...loading}>
+    <motion.div
+      id="home"
+      className="page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <Sponsors />
 
       {locations && (
@@ -37,6 +39,6 @@ export const Home = ({ setPage, ls }) => {
       </div>
 
       {location && <Location location={location} setLocation={setLocation} />}
-    </div>
+    </motion.div>
   );
 };

@@ -1,14 +1,17 @@
 import React from "react";
 import "../../styles/components/sponsors.scss";
 import { SponsorsData } from "../../data";
-
+import { motion } from "framer-motion";
 export const Sponsors = () => {
   return (
     <div id="sponsors">
       <div className="sponsors-info">Places to stay...</div>
       <div id="stay">
-        {SponsorsData.stay.map((s) => (
-          <a
+        {SponsorsData.stay.map((s, i) => (
+          <motion.a
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: i * 0.1 }}
             href={`${s.site}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -19,7 +22,7 @@ export const Sponsors = () => {
             }}
           >
             <div className="sponsor-name">{s.name}</div>
-          </a>
+          </motion.a>
         ))}
       </div>
     </div>

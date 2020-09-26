@@ -1,13 +1,15 @@
 import React from "react";
 import "../../styles/components/location.scss";
 
-import { useLoading } from "../../functions/loading";
+import { motion } from "framer-motion";
 
 export const Location = ({ location, setLocation }) => {
-  const loading = useLoading();
-
   return (
-    <div id="location" {...loading}>
+    <motion.div
+      id="location"
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+    >
       <span
         id="close-location"
         className="material-icons-round"
@@ -23,7 +25,10 @@ export const Location = ({ location, setLocation }) => {
 
         <div className="location-images">
           {[1, 2, 3].map((n) => (
-            <img
+            <motion.img
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: n * 0.1 }}
               alt={location.name}
               key={n}
               src={`https://res.cloudinary.com/baudelaire/image/upload/w_500/tour-app-beta/${location.id}/${n}`}
@@ -62,6 +67,6 @@ export const Location = ({ location, setLocation }) => {
 
         <div className="location-coupon">coupon</div>
       </div>
-    </div>
+    </motion.div>
   );
 };
