@@ -53,13 +53,13 @@ a{
 
 
 
-.page{
-transition:.5s;
-opacity: 0;
-  &.loaded{
-    opacity:1;
-  }
-}
+// .page{
+// transition:.5s;
+// opacity: 0;
+//   &.loaded{
+//     opacity:1;
+//   }
+// }
 
 
 #categories-button,#filters-button{
@@ -80,6 +80,7 @@ color:white;
   display: flex;
   align-items: center;
   padding:10px;
+  padding-left: 14px;
   width: 140px;
   text-align: center;
   span{
