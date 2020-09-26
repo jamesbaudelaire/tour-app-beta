@@ -86,13 +86,13 @@ box-shadow: var(--shadow);
 
 
 
-#location{
-  transition:.3s;
-  transform: translateY(370px);
-  opacity: 0;
-  &.loaded{
-    opacity: 1;
-    transform: translateY(0);
-  }
+// #location{
+//   transition:.3s;
+//   transform: translateY(370px);
+//   opacity: 0;
+//   &.loaded{
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
   
-}
+// }

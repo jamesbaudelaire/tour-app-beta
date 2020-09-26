@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Time } from "../../functions/helper";
 import "../../styles/components/time-slots.scss";
 
+import { motion } from "framer-motion";
+
 export const TimeSlots = ({ setLocation, locations }) => {
   const [timeSlots, setTimeSlots] = useState([]);
 
@@ -19,8 +21,11 @@ export const TimeSlots = ({ setLocation, locations }) => {
           <div className="locations">
             {locations
               .filter((loc) => loc.hour === timeSlot)
-              .map((l) => (
-                <div
+              .map((l, i) => (
+                <motion.div
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: i * 0.1 }}
                   className="location"
                   key={l.name}
                   style={{
@@ -31,7 +36,7 @@ export const TimeSlots = ({ setLocation, locations }) => {
                   }}
                 >
                   <div className="location-name">{l.name}</div>
-                </div>
+                </motion.div>
               ))}
           </div>
         </div>

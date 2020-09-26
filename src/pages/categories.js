@@ -3,7 +3,7 @@ import "../styles/categories.scss";
 import { LocationsData } from "../data";
 import { Interests } from "../data";
 import { Location } from "./components/location";
-import { useLoading } from "../functions/loading";
+import { motion } from "framer-motion";
 
 let filterLocations = (ls) => {
   let filters = ls.data.filters;
@@ -42,8 +42,6 @@ export const Categories = ({ setPage, ls }) => {
 
   let areas = ["downtown", "rivervalley", "greater"];
 
-  const loading = useLoading();
-
   useEffect(() => {
     if (ls.data.tourLocations) {
       setTourLocations(ls.data.tourLocations);
@@ -72,7 +70,12 @@ export const Categories = ({ setPage, ls }) => {
   };
 
   return (
-    <div id="categories" className="page" {...loading}>
+    <motion.div
+      id="categories"
+      className="page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <div className="categories-info">
         Select locations to create a custom itinerary...
       </div>
@@ -102,8 +105,11 @@ export const Categories = ({ setPage, ls }) => {
           <div key={c} className="category">
             <div className="category-name">{c}</div>
             <div className="locations">
-              {organizedLocations[c].map((l) => (
-                <div
+              {organizedLocations[c].map((l, i) => (
+                <motion.div
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: i * 0.1 }}
                   className={`location ${
                     tourLocations.filter((location) => location.id === l.id)
                       .length > 0
@@ -128,7 +134,7 @@ export const Categories = ({ setPage, ls }) => {
                   >
                     check_circle
                   </span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -161,6 +167,6 @@ export const Categories = ({ setPage, ls }) => {
           </button>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };

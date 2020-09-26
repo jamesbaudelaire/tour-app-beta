@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { useLoading } from "../functions/loading";
 import { Interests, InterestsIcons } from "../data";
 import "../styles/filters.scss";
-
+import { motion } from "framer-motion";
 export const Filters = ({ setPage, ls }) => {
   const [filters, setFilters] = useState([]);
-  const loading = useLoading();
 
   useEffect(() => {
     setFilters(ls.data.filters);
   }, []);
 
   return (
-    <div id="filters" className="page" {...loading}>
+    <motion.div
+      id="filters"
+      className="page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <div className="filters-info">
         <div className="title">Choose your interests</div>
         <div className="info">
@@ -47,7 +50,7 @@ export const Filters = ({ setPage, ls }) => {
       ))}
 
       {filters.length > 2 && (
-        <div className="nav">
+        <motion.div className="nav">
           <span
             className="material-icons-round"
             id="filters-button"
@@ -67,8 +70,8 @@ export const Filters = ({ setPage, ls }) => {
           >
             continue <span className="material-icons-round">arrow_forward</span>
           </button>
-        </div>
+        </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 };
