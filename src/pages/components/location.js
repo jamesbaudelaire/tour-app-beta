@@ -10,19 +10,21 @@ export const Location = ({ location, setLocation }) => {
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
     >
-      <span
-        id="close-location"
-        className="material-icons-round"
-        onClick={() => {
-          setLocation(null);
-        }}
-      >
-        arrow_drop_down
-      </span>
-
-      <div id="location-details">
+      <div id="top-bar">
         <div className="location-name">{location.name}</div>
 
+        <span
+          id="close-location"
+          className="material-icons-round"
+          onClick={() => {
+            setLocation(null);
+          }}
+        >
+          close
+        </span>
+      </div>
+
+      <div id="location-details">
         <div className="location-images">
           {[1, 2, 3].map((n) => (
             <motion.img
