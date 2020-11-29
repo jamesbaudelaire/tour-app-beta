@@ -32,8 +32,12 @@ body{
     }
 }
 
+.pointer{
+  cursor: pointer;
+}
 
 button{
+  cursor: pointer;
   font-family:var(--font2);
   &:focus {outline:0;};
   transition: .3s;

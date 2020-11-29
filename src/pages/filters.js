@@ -52,7 +52,7 @@ export const Filters = ({ setPage, ls }) => {
       {filters.length > 2 && (
         <motion.div className="nav">
           <span
-            className="material-icons-round"
+            className="material-icons-round pointer"
             id="filters-button"
             onClick={() => {
               setPage("about");

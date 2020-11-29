@@ -28,7 +28,7 @@ export const Home = ({ setPage, ls }) => {
 
       <div className="nav">
         <span
-          className="material-icons-round"
+          className="material-icons-round pointer"
           id="categories-button"
           onClick={() => {
             setPage("categories");
