@@ -1,0 +1,33 @@
+@media(min-width: 1000px){
+
+#app{
+  margin:20px;
+  border-radius: 20px;
+  position: fixed;
+  overflow: scroll;
+  height:calc(100% - 40px);
+  width:calc(100% - 260px);
+  margin-left:240px;
+  box-shadow: var(--inset);
+}
+
+.nav{
+  box-shadow: var(--shadow);
+  border-radius: 20px;
+  position: fixed;
+    left: 0;
+    top: 0;
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+}
+
+#tour{
+  height:300px;
+  width: 600px;
+}
+
+
+
+
+}

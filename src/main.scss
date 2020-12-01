@@ -32,8 +32,12 @@ body{
     }
 }
 
+.pointer{
+  cursor: pointer;
+}
 
 button{
+  cursor: pointer;
   font-family:var(--font2);
   &:focus {outline:0;};
   transition: .3s;
@@ -49,17 +53,6 @@ a{
   text-decoration: none;
 }
 
-
-
-
-
-// .page{
-// transition:.5s;
-// opacity: 0;
-//   &.loaded{
-//     opacity:1;
-//   }
-// }
 
 
 #categories-button,#filters-button{

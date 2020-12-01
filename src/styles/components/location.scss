@@ -1,36 +1,61 @@
-#close-location{
-  width:100%;
-    text-align: center;
-    font-size: 30px;
-    background: var(--theme);
-    color:white;
-  }
+
   
 
 #location{
+  background: var(--light);
   border-radius: 20px 20px 0 0;
   position: fixed;
   bottom:0;
   left: 0;
   width:100%;
-  overflow: scroll;
-  background:white;
   z-index: 100;
   height: 400px;
+  padding-bottom: 40px;
 
+  @media(min-width: 1000px){
+    max-width: 400px;
+    top: 20%;
+    left: calc(50% - 200px);
+    bottom: unset;
+   box-shadow: 0px 0px 0px 100vw rgba(0,0,0,.5);
+    border-radius: 20px;
+}
 
 }
 
+#top-bar{
+  box-shadow: var(--shadow);
+  background: var(--theme);
+  height: 40px;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  .location-name{
+    color:white;
+    font-family: var(--font1);
+    font-size: 20px;
+    line-height: 40px;
+    padding-left: 20px;
+  }
+
+  #close-location{
+    cursor: pointer;
+    position:absolute;
+    right:0;top:0;
+      text-align: center;
+      font-size: 26px;
+      padding:7px;
+      background: black;
+      opacity: .5;
+      color:white;
+      border-radius: 0px 20px 0 00px;
+    }
+}
 
 
 #location-details{
-  height: 370px;
-    overflow: scroll;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    box-shadow: var(--inset);
+  overflow: scroll;
+  height:100%;
     &::after {
       content: "";
       display: block;
@@ -54,11 +79,7 @@ box-shadow: var(--shadow);
 
 
 #location-details{
-  .location-name{
-    font-family: var(--font1);
-    font-size: 20px;
-    margin:20px;
-  }
+  
   
   .location-about{
     margin:20px;
@@ -83,16 +104,3 @@ box-shadow: var(--shadow);
 }
 }
 
-
-
-
-// #location{
-//   transition:.3s;
-//   transform: translateY(370px);
-//   opacity: 0;
-//   &.loaded{
-//     opacity: 1;
-//     transform: translateY(0);
-//   }
-  
-// }
