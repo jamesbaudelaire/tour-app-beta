@@ -145,7 +145,7 @@ export const Categories = ({ setPage, ls }) => {
 
       <div className="nav">
         <span
-          className="material-icons-round"
+          className="material-icons-round pointer"
           id="filters-button"
           onClick={() => {
             setPage("filters");

@@ -23,7 +23,6 @@ export const Filters = ({ setPage, ls }) => {
           recommendations...
         </div>
       </div>
-
       {Object.keys(Interests).map((type) => (
         <div className="type" key={type}>
           <span className="type-name">{type}</span>
@@ -48,30 +47,27 @@ export const Filters = ({ setPage, ls }) => {
           </div>
         </div>
       ))}
+      <motion.div className="nav">
+        <span
+          className="material-icons-round pointer"
+          id="filters-button"
+          onClick={() => {
+            setPage("about");
+          }}
+        >
+          help
+        </span>
 
-      {filters.length > 2 && (
-        <motion.div className="nav">
-          <span
-            className="material-icons-round pointer"
-            id="filters-button"
-            onClick={() => {
-              setPage("about");
-            }}
-          >
-            help
-          </span>
-
-          <button
-            className="continue-button"
-            onClick={() => {
-              setPage("categories");
-              ls.save({ ...ls.data, page: "categories", filters });
-            }}
-          >
-            continue <span className="material-icons-round">arrow_forward</span>
-          </button>
-        </motion.div>
-      )}
+        <button
+          className="continue-button"
+          onClick={() => {
+            setPage("categories");
+            ls.save({ ...ls.data, page: "categories", filters });
+          }}
+        >
+          continue <span className="material-icons-round">arrow_forward</span>
+        </button>
+      </motion.div>
     </motion.div>
   );
 };

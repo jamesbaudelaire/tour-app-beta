@@ -80,6 +80,10 @@ box-shadow: var(--shadow);
 
 #location-details{
   
+  @media(min-width: 1000px){
+  box-shadow:var(--inset);
+  border-radius: 0 0 20px 20px;
+  }
   
   .location-about{
     margin:20px;

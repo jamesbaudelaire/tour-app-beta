@@ -87,7 +87,6 @@ export const LocationsData = [
     types: ["western"],
     hour: 15,
     categories: ["history"],
-    // hour:[17,20,]
     area: "rivervalley",
     gps: "311 General Darby Street 72901",
     site: "https://www.fortsmith.org/the-darby-house/",
@@ -99,7 +98,6 @@ export const LocationsData = [
     types: ["western", "seafood"],
     hour: 17,
     categories: ["food", "history"],
-    // hour:[17,20,]
     area: "downtown",
     gps: "720 Garrison Ave",
     site: "https://rialtofortsmith.com/",

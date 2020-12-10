@@ -28,8 +28,8 @@ export const Location = ({ location, setLocation }) => {
         <div className="location-images">
           {[1, 2, 3].map((n) => (
             <motion.img
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: n * 0.1 }}
               alt={location.name}
               key={n}
